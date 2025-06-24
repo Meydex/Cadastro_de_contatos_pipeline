@@ -1,6 +1,6 @@
 name: Pipeline CI - Teste Backend 
 
-on: 
+on:
   pull_request:
     branches: [ main ]
 
