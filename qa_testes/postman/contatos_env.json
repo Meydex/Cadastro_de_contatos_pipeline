@@ -1,0 +1,17 @@
+{
+  "id": "contatos-env",
+  "name": "Contatos Environment",
+  "values": [
+    {
+      "key": "get_url",
+      "value": "http://127.0.0.1:5000",
+      "enabled": true
+    },
+    {
+      "key": "post_url",
+      "value": "https://b941f0a6-ff17-4501-bb4c-66b55ed140b2.mock.pstmn.io",
+      "enabled": true
+    }
+  ],
+  "type": "environment"
+}

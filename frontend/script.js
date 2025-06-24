@@ -1,4 +1,4 @@
-const apiUrl = "http://127.0.0.1:5000/contacts"; // ajuste se for outra porta
+const apiUrl = "/contacts";
 
 document.addEventListener("DOMContentLoaded", loadContacts);
 

@@ -9,5 +9,5 @@ class ProductionConfig(Config):
     SQLALCHEMY_DATABASE_URI = "sqlite:///" + os.path.join(basedir, "instance", "contacts.db")
 
 class TestingConfig(Config):
-    SQLALCHEMY_DATABASE_URI = "sqlite:///:memory:"  # ou use sqlite:///test.db para persistência
+    SQLALCHEMY_DATABASE_URI = "sqlite:///:memory:"
     TESTING = True
