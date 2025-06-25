@@ -10,7 +10,7 @@ pytest test_api.py
 ## - entrar na pasta frontend
 cd frontend
 ## - roda servidor local frontend
-python -m http.server 5000
+python -m http.server 5500
 
 ## - rodar newman com ambiente
 newman run ./qa_testes/postman/Contatos.postman_collection.json -e ./qa_testes/postman/contatos_env.json
