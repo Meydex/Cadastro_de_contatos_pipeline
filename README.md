@@ -4,11 +4,11 @@ Este projeto foi desenvolvido com o objetivo de simular uma rotina real de traba
 
 A aplicação consiste em um sistema simples de cadastro de contatos, com:
 
-`Backend em Flask com banco de dados simulado`
-`Frontend em HTML + JavaScript`
-`Testes de API com Postman + Newman`
-`Testes de interface com Cypress`
-`Pipeline CI com GitHub Actions`
+- `Backend em Flask com banco de dados simulado`
+- `Frontend em HTML + JavaScript`
+- `Testes de API com Postman + Newman`
+- `Testes de interface com Cypress`
+- `Pipeline CI com GitHub Actions`
 
 ![Demonstração da pipeline](./artefato/pipeline-rodando.gif)
 
@@ -37,43 +37,43 @@ A aplicação consiste em um sistema simples de cadastro de contatos, com:
 
 ## Como Clonar e Rodar o Projeto Localmente
 1. Clone o repositório
-`git clone https://github.com/Meydex/Cadastro_de_contatos_pipeline.git`
+- `git clone https://github.com/Meydex/Cadastro_de_contatos_pipeline.git`
 
 2. Crie e ative o ambiente virtual
 
-`python -m venv venv`
-`.\venv\Scripts\activate`     # Windows
+- `python -m venv venv`
+- `.\venv\Scripts\activate`     # Windows
 ### ou
 
-`source venv/bin/activate`   # Linux/Mac
+- `source venv/bin/activate`   # Linux/Mac
 
 3. Instale as dependências do projeto
 
-`pip install -r requirements.txt`
+- `pip install -r requirements.txt`
 ## Executando Backend Manualmente
 Backend (com banco real - para testes locais)
 
-`cd backend`
-`python app.py`
+- `cd backend`
+- `python app.py`
 Backend (modo teste, banco em memória)
 
-`cd backend`
-`pytest test_api.py`
+- `cd backend`
+- `pytest test_api.py`
 
 ## Executando Frontend Manualmente
 
-`cd frontend`
-`python -m http.server 5500`
+- `cd frontend`
+- `python -m http.server 5500`
 
 ## Testes
 - Testes com Newman
-    `newman run ./qa_testes/postman/Contatos.postman_collection.json -e ./qa_testes/postman/contatos_env.json`
+    - `newman run ./qa_testes/postman/Contatos.postman_collection.json -e ./qa_testes/postman/contatos_env.json`
 
 - Testes com Cypress
     Modo interativo:
-        `npx cypress open`
+        - `npx cypress open`
     Modo headless (CLI):
-        `npx cypress run`
+        - `npx cypress run`
 
 ## Pipeline CI - GitHub Actions
 A pipeline está configurada para rodar automaticamente em:
