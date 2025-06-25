@@ -10,7 +10,7 @@ A aplicação consiste em um sistema simples de cadastro de contatos, com:
 `Testes de interface com Cypress`
 `Pipeline CI com GitHub Actions`
 
-![Demonstração da pipeline](artefato\pipeline-rodando.gif)
+![Demonstração da pipeline](./artefato/pipeline-rodando.gif)
 
 ## Objetivos e Aprendizados
 - Criar um ambiente completo com backend, frontend e banco simulado
