@@ -1,7 +1,7 @@
 describe('Testar criação de contato', () => {
 
   it('Testar envio de formulário com campo - nome vazio', () => {
-    cy.visit('http://[::1]:5500/')
+    cy.visit('http://127.0.0.1:5500')
 
     cy.get('#email').type("mary@teste.com")
     cy.get('#phone').type("123456789")
@@ -15,7 +15,7 @@ describe('Testar criação de contato', () => {
   })
 
   it('Testar envio de formulário com campo - email vazio', () => {
-    cy.visit('http://[::1]:5500/')
+    cy.visit('http://127.0.0.1:5500')
 
     cy.get('#name').type('mary')
     cy.get('#phone').type("123456789")
@@ -30,7 +30,7 @@ describe('Testar criação de contato', () => {
 
 
   it('Testar envio de formulário com campo - telefone vazio', () => {
-    cy.visit('http://[::1]:5500/')
+    cy.visit('http://127.0.0.1:5500')
 
     cy.get('#name').type('mary')
     cy.get('#email').type("mary123")
@@ -44,7 +44,7 @@ describe('Testar criação de contato', () => {
   })
 
   it('Testar envio de formulário com campo - telefone inválido', () => {
-    cy.visit('http://[::1]:5500/')
+    cy.visit('http://127.0.0.1:5500')
 
     cy.get('#name').type('mary')
     cy.get('#email').type("mary123")
@@ -59,7 +59,7 @@ describe('Testar criação de contato', () => {
   })
 
   it('Simula adicionar um contato com sucesso, sem atingir o back real', () => {
-    cy.visit('http://[::1]:5500/')
+    cy.visit('http://127.0.0.1:5500')
     cy.get('#name').type("mary")
     cy.get('#email').type("mary@teste.com")
     cy.get('#phone').type("111111111")
