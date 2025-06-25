@@ -26,9 +26,40 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Instalar Newman
+        run: |
+         npm install -g newman
+
+      - name: Instalar dependências do projeto Node.js
+        run: npm ci
+
+      - name: Iniciar servidor Flask
+        run: |
+          nohup python backend/app.py &
+
+      - name: Iniciar servidor frontend
+        run: |
+          nohup python3 -m http.server 5000 --directory frontend &
+          
+      - name: Aguardar servidores
+        run: |
+          npx wait-on http://localhost:5000 http://localhost:5000/api/contatos
+
       - name: Rodar testes com pytest
         working-directory: ./backend
         env:
           APP_ENV: testing
         run: |
           pytest test_api.py
+
+      - name: Rodar testes da API com Newman
+        run: |
+          npm run test:api
+
+      - name: Executar testes E2E com Cypress
+        run: npx cypress run

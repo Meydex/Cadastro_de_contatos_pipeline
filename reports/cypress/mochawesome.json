@@ -1,0 +1,181 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 5,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-06-25T15:27:47.736Z",
+    "end": "2025-06-25T15:27:52.369Z",
+    "duration": 4633,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "91232a8c-9248-44c3-8609-0596057a07aa",
+      "title": "",
+      "fullFile": "cypress\\e2e\\contatos.cy.js",
+      "file": "cypress\\e2e\\contatos.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "a20e886c-d74b-49cb-93ed-aaacdf0b96c0",
+          "title": "Testar criação de contato",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Testar envio de formulário com campo - nome vazio",
+              "fullTitle": "Testar criação de contato Testar envio de formulário com campo - nome vazio",
+              "timedOut": null,
+              "duration": 711,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://[::1]:5000/');\ncy.get('#email').type(\"mary@teste.com\");\ncy.get('#phone').type(\"123456789\");\ncy.get('button').click();\ncy.on('window:alert', txt => {\n  expect(txt).to.contains('Preencha todos os campos');\n});",
+              "err": {},
+              "uuid": "f8b7697d-e920-477b-aaa1-e932054ba164",
+              "parentUUID": "a20e886c-d74b-49cb-93ed-aaacdf0b96c0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Testar envio de formulário com campo - email vazio",
+              "fullTitle": "Testar criação de contato Testar envio de formulário com campo - email vazio",
+              "timedOut": null,
+              "duration": 522,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://[::1]:5000/');\ncy.get('#name').type('mary');\ncy.get('#phone').type(\"123456789\");\ncy.get('button').click();\ncy.on('window:alert', txt => {\n  expect(txt).to.contains('Preencha todos os campos');\n});",
+              "err": {},
+              "uuid": "f9fdfc70-226e-4831-bdae-d1c4c9483c87",
+              "parentUUID": "a20e886c-d74b-49cb-93ed-aaacdf0b96c0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Testar envio de formulário com campo - telefone vazio",
+              "fullTitle": "Testar criação de contato Testar envio de formulário com campo - telefone vazio",
+              "timedOut": null,
+              "duration": 512,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://[::1]:5000/');\ncy.get('#name').type('mary');\ncy.get('#email').type(\"mary123\");\ncy.get('button').click();\ncy.on('window:alert', txt => {\n  expect(txt).to.contains('Preencha todos os campos');\n});",
+              "err": {},
+              "uuid": "913a8bad-7859-4406-8f89-75f9b8dd0003",
+              "parentUUID": "a20e886c-d74b-49cb-93ed-aaacdf0b96c0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Testar envio de formulário com campo - telefone inválido",
+              "fullTitle": "Testar criação de contato Testar envio de formulário com campo - telefone inválido",
+              "timedOut": null,
+              "duration": 743,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://[::1]:5000/');\ncy.get('#name').type('mary');\ncy.get('#email').type(\"mary123\");\ncy.get('#phone').type(\"ab12bc-98\");\ncy.get('button').click();\ncy.on('window:alert', txt => {\n  expect(txt).to.contains('Preencha todos os campos');\n});",
+              "err": {},
+              "uuid": "cd740b5c-46ea-40fd-a187-5905c4d292c6",
+              "parentUUID": "a20e886c-d74b-49cb-93ed-aaacdf0b96c0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Simula adicionar um contato com sucesso, sem atingir o back real",
+              "fullTitle": "Testar criação de contato Simula adicionar um contato com sucesso, sem atingir o back real",
+              "timedOut": null,
+              "duration": 816,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://[::1]:5000/');\ncy.get('#name').type(\"mary\");\ncy.get('#email').type(\"mary@teste.com\");\ncy.get('#phone').type(\"111111111\");\ncy.get('button').click();\ncy.intercept('POST', '**/contacts', {\n  statusCode: 201,\n  body: {\n    id: 98,\n    name: \"joão\",\n    email: \"joão@teste.com\",\n    phone: \"1213141516\"\n  }\n}).as('fakePost');\ncy.intercept('GET', '**/contacts', {\n  statusCode: 200,\n  body: {\n    id: 99,\n    name: \"mary\",\n    email: \"mary@teste.com\",\n    phone: \"111111111\"\n  }\n}).as('fakePost');\ncy.on('window:alert', txt => {\n  expect(txt).to.contains('Erro ao adicionar contato');\n});",
+              "err": {},
+              "uuid": "183a79ee-776f-4ed2-a5ed-af3a7ae404bc",
+              "parentUUID": "a20e886c-d74b-49cb-93ed-aaacdf0b96c0",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "f8b7697d-e920-477b-aaa1-e932054ba164",
+            "f9fdfc70-226e-4831-bdae-d1c4c9483c87",
+            "913a8bad-7859-4406-8f89-75f9b8dd0003",
+            "cd740b5c-46ea-40fd-a187-5905c4d292c6",
+            "183a79ee-776f-4ed2-a5ed-af3a7ae404bc"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3304,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "reports/cypress",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -5,9 +5,20 @@ document.addEventListener("DOMContentLoaded", loadContacts);
 document.getElementById("contactForm").addEventListener("submit", async (e) => {
   e.preventDefault();
 
+  const form = document.getElementById("contactForm");
+  if (!form.checkValidity()) {
+    alert("Preencha todos os campos corretamente.");
+    return;
+  }
+
   const name = document.getElementById("name").value.trim();
   const email = document.getElementById("email").value.trim();
   const phone = document.getElementById("phone").value.trim();
+
+  if (!name || !email || !phone) {
+    alert("Preencha todos os campos");
+    return;
+  }
 
   const response = await fetch(apiUrl, {
     method: "POST",

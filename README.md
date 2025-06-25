@@ -13,11 +13,18 @@ cd frontend
 python -m http.server 5000
 
 ## - rodar newman com ambiente
-newman run Contatos.postman_collection.json -e contatos_env.json
+newman run ./qa_testes/postman/Contatos.postman_collection.json -e ./qa_testes/postman/contatos_env.json
 
 
+## - inicar cypress
+npx cypress open
+
+## - rodar cypress via cli
+npx cypress run
 ---------
 ## - rodar projeto depois 
 python -m venv venv
+
 .\venv\Scripts\activate
+
 pip install -r requirements.txt
